@@ -1,6 +1,6 @@
-import Topo from "../top"
 import Rodape from "../../components/footer"
 import { Grid, GridItem } from "@chakra-ui/react"
+import Top from "../top"
 
 interface Props {
     children: React.ReactNode
@@ -11,7 +11,7 @@ function Layout(props: Props){
     return (
         <Grid className="grid" templateColumns='1fr' templateRows='64px auto 64px'>
             <GridItem colSpan={1} rowSpan={1}>
-                <Topo />
+                <Top />
             </GridItem>
             <GridItem colSpan={1} rowSpan={1}>
                 {children}

@@ -14,16 +14,15 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-  } from '@chakra-ui/react';
-  // npm i @chakra-ui/icons
-  import {
-    IoMenu,
-    IoCloseSharp,
-    IoChevronDown,
-    IoChevronForward
-  } from "react-icons/io5"
+} from '@chakra-ui/react';
+import {
+    HamburgerIcon,
+    CloseIcon,
+    ChevronDownIcon,
+    ChevronRightIcon,
+} from '@chakra-ui/icons';
   
-  export default function Topo() {
+  export default function Top() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -45,7 +44,7 @@ import {
             <IconButton
               onClick={onToggle}
               icon={
-                isOpen ? <IoCloseSharp width={3} height={3} /> : <IoMenu width={5} height={5} />
+                isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
               }
               variant={'ghost'}
               aria-label={'Toggle Navigation'}
@@ -56,7 +55,7 @@ import {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              Logo
+              <img src="src\assets\JD-logo.png" width={'150px'}/>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -83,10 +82,10 @@ import {
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'green'}
               href={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'green',
               }}>
               Sign Up
             </Button>
@@ -106,7 +105,7 @@ import {
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4} alignSelf={'center'}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -174,7 +173,7 @@ import {
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={IoChevronForward} />
+            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -215,7 +214,7 @@ import {
           </Text>
           {children && (
             <Icon
-              as={IoChevronDown}
+              as={ChevronDownIcon}
               transition={'all .25s ease-in-out'}
               transform={isOpen ? 'rotate(180deg)' : ''}
               w={6}
@@ -253,13 +252,28 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Sobre',
-      children: [
+      label: 'Home',
+      subLabel: 'The landing page',
+      href: '/',
+    },
+    {
+      label: 'About',
+      subLabel: 'Information about the project',
+      href: '/about',
+      /*children: [
         {
-          label: 'Ir para sobre',
-          href: '/sobre',
+          label: 'Freelance Projects',
+          subLabel: 'An exclusive list for contract work',
+          href: '#',
         },
-  
-      ],
-    }
+      ],*/
+    },
+    /*{
+      label: 'Contact',
+      href: '/Contact',
+    },
+    {
+      label: 'Tasks',
+      href: '/Tasks',
+    },*/
   ];
