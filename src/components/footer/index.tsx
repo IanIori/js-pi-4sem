@@ -23,10 +23,8 @@ import {
           <Stack direction={'row'} spacing={6}>
             <Link href={'#'}>Home</Link>
             <Link href={'#'}>About</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Contact</Link>
           </Stack>
-          <Text>© 2022 Chakra Templates. All rights reserved</Text>
+          <Text>© 2024 Fatec. All rights reserved</Text>
         </Container>
       </Box>
     );
