@@ -21,7 +21,6 @@ import {
       navigate('/main');
     };
 
-
     return (
       <Flex
         minH={'100vh'}
