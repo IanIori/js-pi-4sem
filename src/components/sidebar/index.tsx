@@ -1,7 +1,6 @@
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -12,10 +11,18 @@ import {
   Text,
   VStack
 } from '@chakra-ui/react';
-import AvatarComponent from '../avatar'; // Ajuste o caminho conforme necessário
+import AvatarComponent from '../avatar'; 
+
+import { To, useNavigate } from 'react-router-dom';
 
 function Sidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate()
+
+  const handleNavigation = (path: To) => {
+    navigate(path);
+    onClose();
+  }
 
   return (
     <>
@@ -34,10 +41,10 @@ function Sidebar() {
           </DrawerHeader>
           <DrawerBody>
             <VStack align="stretch" spacing={4}>
-              <Button variant="outline" colorScheme="blue">Configurações</Button>
-              <Button variant="outline" colorScheme="blue">Calendário</Button>
+              <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/calendario')}>Calendário</Button>
               <Button variant="outline" colorScheme="blue">Rotas</Button>
-              <Button variant="outline" colorScheme="blue">Relatórios</Button>
+              <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/relatorios')}>Relatórios</Button>
+              <Button variant="outline" colorScheme="blue">Configurações</Button>
               <Button variant="solid" colorScheme="red">Sair</Button>
             </VStack>
           </DrawerBody>

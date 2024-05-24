@@ -6,6 +6,7 @@ import LoginScreen from '../pages/login'
 import Main from '../pages/main'
 import Cadastro from '../pages/cadastro'
 import Relatorio from '../pages/relatorios'
+import Calendario from '../pages/calendario'
 
 
 const router = createBrowserRouter([
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {path: '/login', element: <LoginScreen />},
   {path: '/cadastro', element: <Cadastro />},
   {path: '/relatorios', element: <Relatorio />},
+  {path: '/calendario', element: <Calendario />},
   {path: '/main', element: <Main />}
 ])
 
