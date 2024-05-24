@@ -1,0 +1,12 @@
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centraliza verticalmente */
+  }
+  
+  .css-1b66czb { /* Ajusta o topo do calendário */
+    width: auto; /* Ajusta a largura do topo */
+    display: flex;
+    justify-content: center;
+  }
