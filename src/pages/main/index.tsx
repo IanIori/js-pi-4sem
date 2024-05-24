@@ -1,11 +1,11 @@
-import Layout from "../../components/layout"
-import SidebarWithHeader from "../../components/sidebar"
+import Layout2 from "../../components/layout2"
+
 
 function Main(){
     return(
-        <Layout>
-            <SidebarWithHeader children={undefined}></SidebarWithHeader>
-        </Layout>
+        <Layout2 children={undefined}>
+            
+        </Layout2>
     )
 }
 
