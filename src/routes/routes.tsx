@@ -5,6 +5,7 @@ import About from '../pages/about'
 import LoginScreen from '../pages/login'
 import Main from '../pages/main'
 import Cadastro from '../pages/cadastro'
+import Relatorio from '../pages/relatorios'
 
 
 const router = createBrowserRouter([
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
   {path: '/about', element: <About />},
   {path: '/login', element: <LoginScreen />},
   {path: '/cadastro', element: <Cadastro />},
+  {path: '/relatorios', element: <Relatorio />},
   {path: '/main', element: <Main />}
 ])
 
