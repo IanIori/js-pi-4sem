@@ -60,4 +60,4 @@ function Cargas(){
     )
 }
 
-export default Tarefas
+export default Cargas

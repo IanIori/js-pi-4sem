@@ -7,6 +7,7 @@ import Main from '../pages/main'
 import Cadastro from '../pages/cadastro'
 import Relatorio from '../pages/relatorios'
 import Calendario from '../pages/calendario'
+import Contato from '../pages/contato'
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   {path: '/cadastro', element: <Cadastro />},
   {path: '/relatorios', element: <Relatorio />},
   {path: '/calendario', element: <Calendario />},
+  {path: '/contato', element: <Contato />},
   {path: '/main', element: <Main />}
 ])
 
