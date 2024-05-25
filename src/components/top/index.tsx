@@ -83,7 +83,7 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'green'}
-              href={'#'}
+              href={'/cadastro'}
               _hover={{
                 bg: 'green',
               }}>

@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    background: #333;
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-image: url('./assets/truck.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: darkgreen;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
