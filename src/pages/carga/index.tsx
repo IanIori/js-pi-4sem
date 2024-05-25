@@ -1,28 +1,28 @@
 import { Link } from "react-router-dom"
 import Layout from "../../components/layout"
-import ItemTarefa from "../../components/cargas/item-carga"
+import ItemCarga from "../../components/cargas/item-carga"
 import { useEffect, useState } from "react"
-import FormTarefa from "../../components/cargas/form-carga"
-import { Tarefa } from "../../interfaces/cargas"
+import FormCarga from "../../components/cargas/form-carga"
+import { Carga } from "../../interfaces/cargas"
 import api from "../../helpers/axios"
 
 function Cargas(){
-    const [tarefas, setTarefas] = useState<Tarefa[]>([])
-    async function carregarLista(){
-        const resposta = await api.get('/task')
+    const [cargas, setCargas] = useState<Carga[]>([])
+    async function carregarCarga(){
+        const resposta = await api.get('/carga')
         if(resposta.status == 200){
-            setTarefas(resposta.data)
+            setCargas(resposta.data)
         }
     }
     useEffect(() => {
-        carregarLista()
+        carregarCarga()
     },[])
 
-    function apagarTarefa(id: number){
-        api.delete(`/task/${id}`)
+    function apagarCarga(id: number){
+        api.delete(`/carga/${id}`)
         .then(resposta => {
             if(resposta.status == 204) {
-                carregarLista()
+                carregarCarga()
             } else {
                 alert('Erro ao remover!')
             }
@@ -32,32 +32,32 @@ function Cargas(){
         })
     }
 
-    function alterarStatus(tarefa: Tarefa){
-        tarefa.completed = !tarefa.completed
-        api.put(`/task/${tarefa.id}`,tarefa)
+    function alterarStatus(status: string, carga: Carga){
+        carga.status = status
+        api.put(`/task/${carga.id}`,carga)
         .then(() => {
-            carregarLista()
+            carregarCarga()
         })
     }
 
     return (
         <Layout>
-            <h1>Tarefas</h1>
+            <h1>Cargas</h1>
             <Link to='/'>Voltar para Home</Link>
             <hr />
 
-            <FormTarefa carregarLista={carregarLista} />
+            <FormCarga carregarCarga={carregarCarga} />
             {
-                tarefas.map((tarefa) => (
-                    <ItemTarefa
-                    key={tarefa.id}
-                    apagarTarefa={apagarTarefa}
-                    alterarStatus={alterarStatus}
-                    tarefa={tarefa} />
+                cargas.map((carga) => (
+                    <ItemCarga
+                    key={carga.id}
+                    apagarCarga={apagarCarga}
+                    alterarStatus={alterarStatus} 
+                    carga={carga} />
                 ))
             }
         </Layout>
     )
 }
 
-export default Tarefas
+export default Cargas

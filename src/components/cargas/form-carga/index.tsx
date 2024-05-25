@@ -45,14 +45,14 @@ function FormCarga({carregarCarga}: FormCargaProps){
             
             <Input
             ref={inputCarga}
-            value={specCarga}
+            value={pesoCarga}
             onChange={(evento) => setPesoCarga(evento.target.valueAsNumber)}
             placeholder="Peso da carga" 
             size='md' />
             
             <Input
             ref={inputCarga}
-            value={specCarga}
+            value={statusCarga}
             onChange={(evento) => setStatusCarga(evento.target.value)}
             placeholder="Status da carga" 
             size='md' />
