@@ -7,7 +7,7 @@ import Popup from '../Popup';
 const CalendarComponent: React.FC = () => {
   const [date, setDate] = useState<Date | Date[]>(new Date());
   const [showPopup, setShowPopup] = useState<boolean>(false);
-  const [appointments, setAppointments] = useState<{ [key: string]: string[] }>({
+  const [appointments] = useState<{ [key: string]: string[] }>({
     '2024-05-28': ['Rota X', 'Rota Y'],
     // Adicione mais compromissos conforme necessário
   });
