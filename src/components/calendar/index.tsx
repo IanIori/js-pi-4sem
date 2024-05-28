@@ -1,21 +1,44 @@
-import React from "react";
-import {Calendar} from "@nextui-org/react";
-import type {DateValue} from "@react-types/calendar";
-import {today, getLocalTimeZone} from "@internationalized/date";
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import './calendar.css'
+import Popup from '../Popup';
 
-export default function CalendarC() {
-  let defaultDate = today(getLocalTimeZone());
-  let [focusedDate, setFocusedDate] = React.useState<DateValue>(defaultDate);
+const CalendarComponent: React.FC = () => {
+  const [date, setDate] = useState<Date | Date[]>(new Date());
+  const [showPopup, setShowPopup] = useState<boolean>(false);
+  const [appointments, setAppointments] = useState<{ [key: string]: string[] }>({
+    '2024-05-28': ['Rota X', 'Rota Y'],
+    // Adicione mais compromissos conforme necessário
+  });
+
+  const onClickDay = (value: Date | Date[]): void => {
+    if (value instanceof Date) {
+      setDate(value);
+      setShowPopup(true);
+    }
+  };
+
+  const getFormattedDate = (date: Date): string => {
+    return date.toISOString().split('T')[0];
+  };
 
   return (
     <div className="calendar-container">
-    <Calendar
-      aria-label="Date (Controlled Focused Value)"
-      focusedValue={focusedDate}
-      value={defaultDate}
-      onFocusChange={setFocusedDate}
-    />
+      <Calendar
+        onClickDay={onClickDay}
+        value={date as Date} // Convertemos para Date
+        className="calendar"
+      />
+      {showPopup && (
+        <Popup
+          date={date as Date} // Convertemos para Date
+          appointments={appointments[getFormattedDate(date as Date)] || []} // Convertemos para Date
+          onClose={() => setShowPopup(false)}
+        />
+      )}
     </div>
   );
-}
+};
+
+export default CalendarComponent;
