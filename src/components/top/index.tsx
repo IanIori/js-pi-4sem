@@ -73,8 +73,8 @@ import {
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'/login'}>
-              Sign In
+              href={'/cadastro'}>
+              Cadastrar
             </Button>
             <Button
               as={'a'}
@@ -83,11 +83,11 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'green'}
-              href={'/cadastro'}
+              href={'/login'}
               _hover={{
                 bg: 'green',
               }}>
-              Sign Up
+              Entrar
             </Button>
           </Stack>
         </Flex>
@@ -252,12 +252,12 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Home',
+      label: 'Início',
       subLabel: 'The landing page',
       href: '/',
     },
     {
-      label: 'About',
+      label: 'Sobre',
       subLabel: 'Information about the project',
       href: '/about',
       /*children: [
@@ -268,12 +268,12 @@ import {
         },
       ],*/
     },
-    /*{
-      label: 'Contact',
-      href: '/Contact',
+    {
+      label: 'Contato',
+      href: '/Contato',
     },
     {
-      label: 'Tasks',
-      href: '/Tasks',
-    },*/
+      label: 'Carga',
+      href: '/Cargas',
+    },
   ];
