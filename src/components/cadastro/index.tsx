@@ -40,90 +40,94 @@ const CadastroC: React.FC = () => {
     };
 
     return (
-        
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Nome:</label>
-                <input
-                    type="text"
-                    name="nome"
-                    value={form.nome}
-                    onChange={handleChange}
-                    placeholder="Insira seu nome"
-                    required
-                />
-            </div>
-            <div>
-                <label>CPF:</label>
-                <input
-                    type="text"
-                    name="cpf"
-                    value={form.cpf}
-                    onChange={handleChange}
-                    placeholder="Insira seu CPF"
-                    required
-                />
-            </div>
-            <div>
-                <label>Data de Nascimento:</label>
-                <input
-                    type="date"
-                    name="dataNascimento"
-                    value={form.dataNascimento}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <div>
-                <label>Telefone:</label>
-                <input
-                    type="tel"
-                    name="telefone"
-                    value={form.telefone}
-                    onChange={handleChange}
-                    placeholder="Insira seu telefone"
-                    required
-                />
-            </div>
-            <div>
-                <label>Email:</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="Insira seu email"
-                    required
-                />
-            </div>
-            <div>
-                <label>Senha:</label>
-                <input
-                    type="password"
-                    name="senha"
-                    value={form.senha}
-                    onChange={handleChange}
-                    placeholder="Insira sua senha"
-                    required
-                />
-            </div>
-            <div>
-                <label>Confirme sua Senha:</label>
-                <input
-                    type="password"
-                    name="confirmeSenha"
-                    value={form.confirmeSenha}
-                    onChange={handleChange}
-                    placeholder="Confirme sua senha"
-                    required
-                />
-            </div>
-            <div>
-                <button type="submit">
-                    Cadastrar
-                </button>
-            </div>
-        </form>
+        <>
+            
+            <main>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Nome:</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            value={form.nome}
+                            onChange={handleChange}
+                            placeholder="Insira seu nome"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>CPF:</label>
+                        <input
+                            type="text"
+                            name="cpf"
+                            value={form.cpf}
+                            onChange={handleChange}
+                            placeholder="Insira seu CPF"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Data de Nascimento:</label>
+                        <input
+                            type="date"
+                            name="dataNascimento"
+                            value={form.dataNascimento}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Telefone:</label>
+                        <input
+                            type="tel"
+                            name="telefone"
+                            value={form.telefone}
+                            onChange={handleChange}
+                            placeholder="Insira seu telefone"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={form.email}
+                            onChange={handleChange}
+                            placeholder="Insira seu email"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Senha:</label>
+                        <input
+                            type="password"
+                            name="senha"
+                            value={form.senha}
+                            onChange={handleChange}
+                            placeholder="Insira sua senha"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label>Confirme sua Senha:</label>
+                        <input
+                            type="password"
+                            name="confirmeSenha"
+                            value={form.confirmeSenha}
+                            onChange={handleChange}
+                            placeholder="Confirme sua senha"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <button type="submit">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </>
     );
 };
 
