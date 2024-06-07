@@ -8,10 +8,10 @@ function Contato(){
     return (
         <Layout>
             <div>
-            <All></All>
+            <Simple></Simple>
             </div>
             <div>
-            <Simple></Simple>
+            <All></All>
             </div>
         </Layout>
     )

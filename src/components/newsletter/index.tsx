@@ -18,7 +18,7 @@ import {
         align={'center'}
         justify={'center'}
         py={12}
-        bg={useColorModeValue('gray.50', 'gray.800')}
+        bgImage={'truck.jpg'}
       >
         <Stack
           boxShadow={'2xl'}
