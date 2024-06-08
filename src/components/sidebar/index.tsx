@@ -43,7 +43,7 @@ function Sidebar() {
           <DrawerBody>
             <VStack align="stretch" spacing={4}>
               <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/calendario')}>Calendário</Button>
-              <Button variant="outline" colorScheme="blue">Rotas</Button>
+              <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/mapa')}>Rotas</Button>
               <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/relatorios')}>Relatórios</Button>
               <Button variant="outline" colorScheme="blue">Configurações</Button>
               <Button variant="solid" colorScheme="red">Sair</Button>
