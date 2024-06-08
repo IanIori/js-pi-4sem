@@ -36,6 +36,7 @@ const CadastroC: React.FC = () => {
             alert('As senhas não coincidem!');
             return;
         }
+        
         console.log('Form data:', form);
     };
 

@@ -8,12 +8,16 @@ import api from "../../helpers/axios"
 
 function Cargas(){
     const [cargas, setCargas] = useState<Carga[]>([])
+
     async function carregarCarga(){
         const resposta = await api.get('/carga')
         if(resposta.status == 200){
             setCargas(resposta.data)
+        } else {
+            alert('Erro ao carregar cargas!');
         }
     }
+
     useEffect(() => {
         carregarCarga()
     },[])
@@ -43,7 +47,6 @@ function Cargas(){
     return (
         <Layout>
             <h1>Cargas</h1>
-            <Link to='/'>Voltar para Home</Link>
             <hr />
 
             <FormCarga carregarCarga={carregarCarga} />
