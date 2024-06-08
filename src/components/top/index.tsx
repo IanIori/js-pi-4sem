@@ -274,6 +274,6 @@ import {
     },
     {
       label: 'Carga',
-      href: '/Cargas',
+      href: '/carga',
     },
   ];
