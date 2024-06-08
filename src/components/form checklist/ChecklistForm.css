@@ -5,8 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   /*  height: 100vh; Altura total da viewport */
-    background-color: #f0f0f0; /* Cor de fundo opcional */
+   background-image: url('truck.jpg'); /* Cor de fundo opcional */
   }
   
   /* Estilo do formulário */
