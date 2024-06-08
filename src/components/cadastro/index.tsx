@@ -56,7 +56,7 @@ const CadastroC: React.FC = () => {
             }
         } catch (error) {
             console.error('Erro ao enviar dados:', error);
-            alert('Erro ao realizar cadastro2. Tente novamente.');
+            alert('Erro ao realizar cadastro. Tente novamente.');
         }
 
         console.log('Form data:', form);
