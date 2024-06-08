@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './cadastro.css';  // Import the CSS file
-import axios from 'axios';
+import api from "../../helpers/axios"
 
 interface FormState {
     nome: string;
@@ -39,8 +39,8 @@ const CadastroC: React.FC = () => {
         }
 
         try {
-            const response = await axios.post('/auth/register', form);
-            if (response.status === 200) {
+            const response = await api.post('/auth/register', form);
+            if (response.status === 201) {
                 alert('Cadastro realizado com sucesso!');
                 setForm({
                     nome: '',
@@ -56,14 +56,14 @@ const CadastroC: React.FC = () => {
             }
         } catch (error) {
             console.error('Erro ao enviar dados:', error);
-            alert('Erro ao realizar cadastro. Tente novamente.');
+            alert('Erro ao realizar cadastro2. Tente novamente.');
         }
 
         console.log('Form data:', form);
     };
 
     return (
-        
+    
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome:</label>
