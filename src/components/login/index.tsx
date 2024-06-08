@@ -13,13 +13,32 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
   import { useNavigate } from 'react-router-dom';
-  
-  export default function Login() {
+  import api from '../../helpers/axios';
+import { useState } from 'react';
 
+  export default function Login() {
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
     const navigate = useNavigate();
-    const handleSignIn = () => {
-      navigate('/main');
-    };
+    
+    const handleSignIn = async () => {
+      try {
+        const response = await api.post('/auth/login', { email, senha })
+        if (response.status === 200) {
+          // Assuming the API returns a token or some kind of user information
+          // Save the token or user info to localStorage or context/state
+          localStorage.setItem('token', response.data.token)
+
+          // Navigate to the main page
+          navigate('/main')
+        } else {
+          alert('Login failed. Please check your credentials and try again.')
+        }
+      } catch (error) {
+        console.error('Error during sign in:', error)
+        alert('An error occurred. Please try again later.')
+      }
+    }
 
     return (
       <Flex
@@ -46,11 +65,19 @@ import {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input 
+                  type="email" 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)} 
+                />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input 
+                  type="senha" 
+                  value={senha} 
+                  onChange={(e) => setSenha(e.target.value)} 
+                />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
