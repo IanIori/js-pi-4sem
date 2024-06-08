@@ -15,13 +15,14 @@ header {
 }
 
 main {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     flex: 1;
-    background-image: url('./assets/truck.jpg');
+    background-image: url('truck.jpg');
     background-size: cover;
     background-position: center center;
+    height: calc(100vh - 60px); /* Ajusta a altura do main considerando o header e footer */
 }
 
 form {

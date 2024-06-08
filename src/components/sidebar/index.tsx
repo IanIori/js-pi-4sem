@@ -36,7 +36,8 @@ function Sidebar() {
           <DrawerHeader borderBottomWidth='1px' backgroundColor={'green'}>
             <Box display="flex" alignItems="center">
               <AvatarComponent />
-              <Text marginLeft="12px">João da Silva</Text>
+              <Text marginLeft="12px">João da Silva </Text>
+              <Text scrollMarginBottom="12px">   ★★★★☆</Text>
             </Box>
           </DrawerHeader>
           <DrawerBody>
