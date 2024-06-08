@@ -21,8 +21,10 @@ import {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
           <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About</Link>
+            <Link href={'#'}>Inicio</Link>
+            <Link href={'/about'}>Sobre</Link>
+            <Link href={'/Contato'}>Contato</Link>
+            <Link href={'/Cargas'}>Carga</Link>
           </Stack>
           <Text>© 2024 Fatec. All rights reserved</Text>
         </Container>

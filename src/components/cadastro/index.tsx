@@ -63,8 +63,7 @@ const CadastroC: React.FC = () => {
     };
 
     return (
-        
-        <form onSubmit={handleSubmit}>
+           <form onSubmit={handleSubmit}>
             <div>
                 <label>Nome:</label>
                 <input
