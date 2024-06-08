@@ -21,9 +21,11 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
 } from '@chakra-ui/icons';
+import { useAuth } from '../auth-context';
   
   export default function Top() {
     const { isOpen, onToggle } = useDisclosure();
+    const { isLoggedIn, logout } = useAuth();
   
     return (
       <Box>
@@ -68,27 +70,40 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'/cadastro'}>
-              Cadastrar
-            </Button>
-            <Button
-              as={'a'}
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'green'}
-              href={'/login'}
-              _hover={{
-                bg: 'green',
-              }}>
-              Entrar
-            </Button>
+            {isLoggedIn ? (
+              <Button
+                as={'a'}
+                fontSize={'sm'}
+                fontWeight={600}
+                color={'white'}
+                bg={'red.400'}
+                _hover={{ bg: 'red.500' }}
+                onClick={logout}>
+                Logout
+              </Button>
+          ) : (
+              <>
+                <Button
+                  as={'a'}
+                  fontSize={'sm'}
+                  fontWeight={400}
+                  variant={'link'}
+                  href={'/cadastro'}>
+                  Cadastrar
+                </Button>
+                <Button
+                  as={'a'}
+                  display={{ base: 'none', md: 'inline-flex' }}
+                  fontSize={'sm'}
+                  fontWeight={600}
+                  color={'white'}
+                  bg={'green'}
+                  href={'/login'}
+                  _hover={{ bg: 'green' }}>
+                  Entrar
+                </Button>
+              </>
+            )}
           </Stack>
         </Flex>
   
@@ -248,6 +263,7 @@ import {
     subLabel?: string;
     children?: Array<NavItem>;
     href?: string;
+    requiresAuth?: boolean; // Add this property to the NavItem interface
   }
   
   const NAV_ITEMS: Array<NavItem> = [
@@ -275,5 +291,6 @@ import {
     {
       label: 'Carga',
       href: '/carga',
-    },
+      requiresAuth: true, // Only show this item to logged-in users
+  },
   ];
