@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './cadastro.css';  // Import the CSS file
+import axios from 'axios';
 
 interface FormState {
     nome: string;
@@ -30,13 +31,34 @@ const CadastroC: React.FC = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (form.senha !== form.confirmeSenha) {
             alert('As senhas não coincidem!');
             return;
         }
-        
+
+        try {
+            const response = await axios.post('/auth/register', form);
+            if (response.status === 200) {
+                alert('Cadastro realizado com sucesso!');
+                setForm({
+                    nome: '',
+                    cpf: '',
+                    dataNascimento: '',
+                    telefone: '',
+                    email: '',
+                    senha: '',
+                    confirmeSenha: ''
+                });
+            } else {
+                alert('Erro ao realizar cadastro. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+            alert('Erro ao realizar cadastro. Tente novamente.');
+        }
+
         console.log('Form data:', form);
     };
 
@@ -72,7 +94,6 @@ const CadastroC: React.FC = () => {
                     name="dataNascimento"
                     value={form.dataNascimento}
                     onChange={handleChange}
-                    required
                 />
             </div>
             <div>
@@ -83,7 +104,6 @@ const CadastroC: React.FC = () => {
                     value={form.telefone}
                     onChange={handleChange}
                     placeholder="Insira seu telefone"
-                    required
                 />
             </div>
             <div>
