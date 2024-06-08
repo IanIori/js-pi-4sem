@@ -1,17 +1,18 @@
-import { Calendar } from "@nextui-org/react"
+
 import Layout2 from "../../components/layout2"
+import CalendarComponent from "../../components/calendar"
 
 
 
-function Calendario(){
+function Calendario() {
     return (
         <Layout2>
-            
-                
 
-    <Calendar></Calendar>
-                
-                
+
+
+            <CalendarComponent></CalendarComponent>
+
+
         </Layout2>
     )
 }
