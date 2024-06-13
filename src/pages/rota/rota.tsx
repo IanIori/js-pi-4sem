@@ -1,11 +1,12 @@
+import Layout2 from "../../components/layout2"
 import MapaComponente from "../../components/mapa/mapa"
 
 function Rota() {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <h1>Meu Mapa</h1>
+        <Layout2>
+      
       <MapaComponente />
-    </div>
+      </Layout2>
     )
 }
 
