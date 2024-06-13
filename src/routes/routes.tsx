@@ -9,6 +9,7 @@ import Cadastro from '../pages/cadastro'
 import Relatorio from '../pages/relatorios'
 import Calendario from '../pages/calendario'
 import Contato from '../pages/contato'
+import Rota from '../pages/rota/rota'
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   {path: '/relatorios', element: <Relatorio />},
   {path: '/calendario', element: <Calendario />},
   {path: '/contato', element: <Contato />},
+  {path: '/rotas', element: <Rota />},
   {path: '/main', element: <Main />}
 ])
 

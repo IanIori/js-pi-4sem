@@ -2,16 +2,18 @@ import React from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '100%',
-  height: '400px'
+  width: '50%',
+  height: '400px',
+  margin: "0 auto",
+  display: "block"
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: -23.113552854750548,
+  lng: -47.27554440834238
 };
 
-const apiKey = 'YOUR_GOOGLE_MAPS_API_KEY'; // Substitua pela sua chave da API
+const apiKey = 'AIzaSyDZXF_k3MhjxpAvGkInWDaxJPtN2h8hyAg'; 
 
 const MapaComponente: React.FC = () => {
   return (
