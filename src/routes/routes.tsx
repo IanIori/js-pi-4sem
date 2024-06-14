@@ -10,7 +10,7 @@ import Relatorio from '../pages/relatorios'
 import Calendario from '../pages/calendario'
 import Contato from '../pages/contato'
 import Rota from '../pages/rota/rota'
-
+import Configuracao from '../pages/configuracao/configuracao'
 
 const router = createBrowserRouter([
   {path: '/', element: <Home />, errorElement: <NotFound />},
@@ -23,6 +23,7 @@ const router = createBrowserRouter([
   {path: '/calendario', element: <Calendario />},
   {path: '/contato', element: <Contato />},
   {path: '/rotas', element: <Rota />},
+  {path: '/configuracao', element: <Configuracao />},
   {path: '/main', element: <Main />}
 ])
 

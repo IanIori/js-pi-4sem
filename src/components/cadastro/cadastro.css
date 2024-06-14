@@ -39,7 +39,7 @@ form div {
 }
 
 form label {
-    display: block;
+    
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -72,3 +72,4 @@ footer {
     background: #333;
     color: white;
 }
+

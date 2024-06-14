@@ -54,7 +54,7 @@ import { useState } from 'react';
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our <Link href='/about' color={'blue.400'}>features</Link> 
+              para conhecer todas nossas <Link href='/about' color={'blue.400'}>características</Link> 
             </Text>
           </Stack>
           <Box

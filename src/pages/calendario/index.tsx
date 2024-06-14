@@ -7,8 +7,7 @@ import CalendarComponent from "../../components/calendar"
 function Calendario() {
     return (
         <Layout2>
-
-
+            
 
             <CalendarComponent></CalendarComponent>
 

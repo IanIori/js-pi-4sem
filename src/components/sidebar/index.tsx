@@ -45,7 +45,7 @@ function Sidebar() {
               <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/calendario')}>Calendário</Button>
               <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/rotas')}>Rotas</Button>
               <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/relatorios')}>Relatórios</Button>
-              <Button variant="outline" colorScheme="blue">Configurações</Button>
+              <Button variant="outline" colorScheme="blue" onClick={() => handleNavigation('/configuracao')}>Configurações</Button>
               <Button variant="solid" colorScheme="red">Sair</Button>
             </VStack>
           </DrawerBody>
