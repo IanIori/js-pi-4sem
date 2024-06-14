@@ -75,6 +75,11 @@ const ChecklistForm: React.FC = () => {
       <div className="checklist-form">
         <h1>Checklist de Verificação</h1>
         <form onSubmit={handleSubmit}>
+
+        <div>
+            <label>Número do Checklist:</label>
+            <input type="text" name="numeroChecklist" value={formData.numeroChecklist} readOnly />
+          </div>
           <div>
             <label>Nome do Motorista:</label>
             <input type="text" name="nomeMotorista" value={formData.nomeMotorista} onChange={handleChange} />
@@ -99,19 +104,13 @@ const ChecklistForm: React.FC = () => {
             <label>Empresa de Transporte:</label>
             <input type="text" name="empresaTransporte" value={formData.empresaTransporte} onChange={handleChange} />
           </div>
+
           <div>
-            <label>Número do Checklist:</label>
-            <input type="text" name="numeroChecklist" value={formData.numeroChecklist} readOnly />
-          </div>
-          <div>
-            <h3>Itens do Checklist</h3>
+            
             <label>Número da Máquina/Equipamento:</label>
             <input type="text" name="numeroMaquina" value={formData.numeroMaquina} onChange={handleChange} />
           </div>
-          <div>
-            <label>Número CTE:</label>
-            <input type="text" name="numeroCTE" value={formData.numeroCTE} onChange={handleChange} />
-          </div>
+          
           <div>
             <label>Pintura:</label>
             <input type="text" name="pintura" value={formData.pintura} onChange={handleChange} />
