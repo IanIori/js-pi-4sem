@@ -9,6 +9,8 @@ import {
     useColorModeValue,
     createIcon,
   } from '@chakra-ui/react';
+  
+
  
   export default function CardWithIllustration() {
     return (
