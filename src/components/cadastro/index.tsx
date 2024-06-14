@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './cadastro.css';  // Import the CSS file
 import api from "../../helpers/axios"
+import { Box, Button, Flex, FormControl, FormLabel, Input } from '@chakra-ui/react';
 
 interface FormState {
     nome: string;
@@ -63,11 +64,26 @@ const CadastroC: React.FC = () => {
     };
 
     return (
-    
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Nome:</label>
-                <input
+        <Flex
+        w="full"
+        h="100vh"
+        align="center"
+        justify="center"
+        py={12}
+        bgImage="url('truck.jpg')"
+        bgSize="cover"
+    >
+        <Box 
+            as="form" 
+            onSubmit={handleSubmit} 
+            p={8} 
+            bg="white" 
+            boxShadow="md" 
+            borderRadius="md"
+        >
+            <FormControl mb={4}>
+                <FormLabel>Nome</FormLabel>
+                <Input
                     type="text"
                     name="nome"
                     value={form.nome}
@@ -75,10 +91,10 @@ const CadastroC: React.FC = () => {
                     placeholder="Insira seu nome"
                     required
                 />
-            </div>
-            <div>
-                <label>CPF:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>CPF</FormLabel>
+                <Input
                     type="text"
                     name="cpf"
                     value={form.cpf}
@@ -86,29 +102,29 @@ const CadastroC: React.FC = () => {
                     placeholder="Insira seu CPF"
                     required
                 />
-            </div>
-            <div>
-                <label>Data de Nascimento:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>Data de Nascimento</FormLabel>
+                <Input
                     type="date"
                     name="dataNascimento"
                     value={form.dataNascimento}
                     onChange={handleChange}
                 />
-            </div>
-            <div>
-                <label>Telefone:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>Telefone</FormLabel>
+                <Input
                     type="tel"
                     name="telefone"
                     value={form.telefone}
                     onChange={handleChange}
                     placeholder="Insira seu telefone"
                 />
-            </div>
-            <div>
-                <label>Email:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>Email</FormLabel>
+                <Input
                     type="email"
                     name="email"
                     value={form.email}
@@ -116,10 +132,10 @@ const CadastroC: React.FC = () => {
                     placeholder="Insira seu email"
                     required
                 />
-            </div>
-            <div>
-                <label>Senha:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>Senha</FormLabel>
+                <Input
                     type="password"
                     name="senha"
                     value={form.senha}
@@ -127,10 +143,10 @@ const CadastroC: React.FC = () => {
                     placeholder="Insira sua senha"
                     required
                 />
-            </div>
-            <div>
-                <label>Confirme sua Senha:</label>
-                <input
+            </FormControl>
+            <FormControl mb={4}>
+                <FormLabel>Confirme sua Senha</FormLabel>
+                <Input
                     type="password"
                     name="confirmeSenha"
                     value={form.confirmeSenha}
@@ -138,14 +154,13 @@ const CadastroC: React.FC = () => {
                     placeholder="Confirme sua senha"
                     required
                 />
-            </div>
-            <div>
-                <button type="submit">
-                    Cadastrar
-                </button>
-            </div>
-        </form>
-    );
+            </FormControl>
+            <Button type="submit" colorScheme="blue">
+                Cadastrar
+            </Button>
+        </Box>
+    </Flex>
+);
 };
 
 export default CadastroC;

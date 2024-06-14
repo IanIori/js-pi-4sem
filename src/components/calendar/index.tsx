@@ -24,7 +24,9 @@ const CalendarComponent: React.FC = () => {
   };
 
   return (
+    
     <div className="calendar-container">
+            
       <Calendar
         onClickDay={onClickDay}
         value={date as Date} // Convertemos para Date

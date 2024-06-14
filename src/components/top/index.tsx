@@ -288,9 +288,5 @@ import { useAuth } from '../auth-context';
       label: 'Contato',
       href: '/Contato',
     },
-    {
-      label: 'Carga',
-      href: '/carga',
-      requiresAuth: true, // Only show this item to logged-in users
-  },
+    
   ];

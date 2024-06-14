@@ -53,8 +53,8 @@ import { useState } from 'react';
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-            <Text fontSize={'lg'} color={'gray.600'}>
-              para conhecer todas nossas <Link href='/about' color={'blue.400'}>características</Link> 
+            <Text fontSize={'lg'} color={'black'}>
+              para conhecer todas nossas <Link href='/about' color={'green.200'}>características</Link> 
             </Text>
           </Stack>
           <Box
@@ -85,13 +85,13 @@ import { useState } from 'react';
                   align={'start'}
                   justify={'space-between'}>
                   <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link>
+                  <Link color={'green.400'}>Forgot password?</Link>
                 </Stack>
                 <Button
-                  bg={'blue.400'}
+                  bg={'green.400'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: 'green.800',
                   }}
                   onClick={handleSignIn}>
                   Sign in
