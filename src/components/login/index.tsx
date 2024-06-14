@@ -52,16 +52,19 @@ import { useState } from 'react';
         backgroundPosition={'center center'}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
-            <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-            <Text fontSize={'lg'} color={'black'}>
-              para conhecer todas nossas <Link href='/about' color={'green.200'}>características</Link> 
-            </Text>
+            
           </Stack>
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}
             boxShadow={'lg'}
             p={8}>
+              <Heading fontSize={'4xl'}>Entre na sua conta</Heading>
+            <Text fontSize={'lg'} color={'black'}>
+              para conhecer todas nossas <Link href='/about' color={'green.300'}>características</Link> 
+            </Text>
+            <br></br>
+            <br></br>
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
